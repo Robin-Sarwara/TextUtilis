@@ -1,0 +1,17 @@
+.primary-btn{
+  background-color: rgb(59, 59, 222);
+  color: white;
+}
+.second-btn{
+  background-color: rgb(59, 59, 222);
+  color: white;
+}
+.preview{
+  background-color: rgb(59, 59, 222);
+  color: white;
+}
+button{
+  background-color: rgb(59, 59, 222);
+  color: white;
+  border: 2px solid blue;
+  border-radius: 10px;}
