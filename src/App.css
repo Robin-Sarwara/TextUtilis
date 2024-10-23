@@ -15,3 +15,18 @@ button{
   color: white;
   border: 2px solid blue;
   border-radius: 10px;}
+.accordion-button::after {
+  color: inherit !important;
+}
+.accordion-button:not(.collapsed)::after {
+  color: inherit !important;
+}
+.accordion-button{
+  border: 2px solid white;
+}
+.accordion-body{
+  border: 2px solid white;
+}
+.form-check-label {
+  margin-bottom: 0; /* Removes the bottom margin from the label */
+}

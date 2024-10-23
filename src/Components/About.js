@@ -1,41 +1,44 @@
-import React, {useState} from "react";
+import React from "react";
 
-export default function About() {
-    const [myStyle, setMyStyle] = useState({
-        color: "black",
-        backgroundColor: "white"}
-    )
-    const[btnText, setBtnText] = useState("Enable Dark Mode")
-    const toggleMode = ()=>{
-        if(myStyle.color === "black"){
-            setMyStyle({
-                color: "white",
-            backgroundColor: "black"
-        })
-            setBtnText("Enable Light Mode")
+export default function About(props) {
+    // const [myStyle, setMyStyle] = useState({
+    //     color: "black",
+    //     backgroundColor: "white"}
+    // )
+    // const[btnText, setBtnText] = useState("Enable Dark Mode")
+    // const toggleMode = ()=>{
+    //     if(myStyle.color === "black"){
+    //         setMyStyle({
+    //             color: "white",
+    //         backgroundColor: "black"
+    //     })
+    //         setBtnText("Enable Light Mode")
     
-        }
-        else{
-            setMyStyle({
-            color: "black",
-            backgroundColor: "white"
-            })
-            setBtnText("Enable Dark Mode")
-        }
-    }
-    const contStyle = () =>{
-        return{
-            width: "100vw",
-        height: "100vh"
-    }
-    }
+    //     }
+    //     else{
+    //         setMyStyle({
+    //         color: "black",
+    //         backgroundColor: "white"
+    //         })
+    //         setBtnText("Enable Dark Mode")
+    //     }
+    // }
+    // const contStyle = () =>{
+    //     return{
+    //         width: "100vw",
+    //     height: "100vh"
+    // }
+    // }
   return (
     <>
- <div className="container" style={{...myStyle, ...contStyle()}}>
+ <div className={`container ${props.mode === "dark" ? 'bg-dark text-light' : 'bg-light text-dark'}`}>
       <div>
         <div className="accordion" id="accordionExample">
           <div className="accordion-item">
-            <h2 className="accordion-header" style={myStyle}>
+            <h2 className="accordion-header" style={{
+              backgroundColor: props.mode === "dark" ? "rgb(21, 73, 191)" : "#fff",
+              color: props.mode === "dark" ? "#fff" : "#000",
+            }}>
               <button
                 className="accordion-button"
                 type="button"
@@ -43,27 +46,33 @@ export default function About() {
                 data-bs-target="#collapseOne"
                 aria-expanded="true"
                 aria-controls="collapseOne"
-                style={myStyle}
-              >
-                Accordion Item #1
+                style={{
+                  backgroundColor: props.mode === "dark" ? "rgb(21, 73, 191)" : "#fff",
+                  color: props.mode === "dark" ? "#fff" : "#000",
+                }}>
+                Features of TextUtilis
               </button>
             </h2>
             <div
               id="collapseOne"
               className="accordion-collapse collapse show"
               data-bs-parent="#accordionExample"
-              style={myStyle}
-            >
-              <div className="accordion-body"  style={myStyle}>
-                <strong>This is the first item's accordion body.</strong> It is
-                shown by default, until the collapse plugin adds the appropriate
-                classes that we use to style each element. These classes control
-                the overall appearance, as well as the showing and hiding via
-                CSS transitions. You can modify any of this with custom CSS or
-                overriding our default variables. It's also worth noting that
-                just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
+              style={{
+                backgroundColor: props.mode === "dark" ? "rgb(21, 73, 191)" : "#fff",
+                color: props.mode === "dark" ? "#fff" : "#000",
+              }}>
+              <div className="accordion-body" 
+               style={{
+              backgroundColor: props.mode === "dark" ? "rgb(21, 73, 191)" : "#fff",
+              color: props.mode === "dark" ? "#fff" : "#000",
+            }}>
+                 <ul>
+                <li>Convert text to Uppercase</li>
+                <li>Convert text to Lowercase</li>
+                <li>Convert text to Italic</li>
+                <li>Clear your text with a single click</li>
+                <li>Preview your text as it appears</li>
+              </ul>
               </div>
             </div>
           </div>
@@ -76,27 +85,31 @@ export default function About() {
                 data-bs-target="#collapseTwo"
                 aria-expanded="false"
                 aria-controls="collapseTwo"
-                style={myStyle}
-              >
-                Accordion Item #2
+                style={{
+                  backgroundColor: props.mode === "dark" ? "rgb(21, 73, 191)" : "#fff",
+                  color: props.mode === "dark" ? "#fff" : "#000",
+                }}>
+                Text Statistics
               </button>
             </h2>
             <div
               id="collapseTwo"
               className="accordion-collapse collapse"
               data-bs-parent="#accordionExample"
-              style={myStyle}
-            >
-              <div className="accordion-body"  style={myStyle}>
-                <strong>This is the second item's accordion body.</strong> It is
-                hidden by default, until the collapse plugin adds the
-                appropriate classes that we use to style each element. These
-                classes control the overall appearance, as well as the showing
-                and hiding via CSS transitions. You can modify any of this with
-                custom CSS or overriding our default variables. It's also worth
-                noting that just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
+              style={{
+                backgroundColor: props.mode === "dark" ? "rgb(21, 73, 191)" : "#fff",
+                color: props.mode === "dark" ? "#fff" : "#000",
+              }}>
+              <div className="accordion-body" style={{
+              backgroundColor: props.mode === "dark" ? "rgb(21, 73, 191)" : "#fff",
+              color: props.mode === "dark" ? "#fff" : "#000",
+            }}>
+                <p>TextUtilis provides you with detailed statistics about your text:</p>
+              <ul>
+                <li>Word Count: Get the number of words in your text.</li>
+                <li>Character Count: Know how many characters (including spaces) are in your text.</li>
+                <li>Reading Time: Estimate how long it will take to read your text.</li>
+              </ul>
               </div>
             </div>
           </div>
@@ -109,9 +122,11 @@ export default function About() {
                 data-bs-target="#collapseThree"
                 aria-expanded="false"
                 aria-controls="collapseThree"
-                style={myStyle}
-              >
-                Accordion Item #3
+                style={{
+                  backgroundColor: props.mode === "dark" ? "rgb(21, 73, 191)" : "#fff",
+                  color: props.mode === "dark" ? "#fff" : "#000",
+                }}>
+               Benefits of Using TextUtilis
               </button>
             </h2>
             <div
@@ -119,22 +134,22 @@ export default function About() {
               className="accordion-collapse collapse"
               data-bs-parent="#accordionExample"
             >
-              <div className="accordion-body"  style={myStyle}>
-                <strong>This is the third item's accordion body.</strong> It is
-                hidden by default, until the collapse plugin adds the
-                appropriate classes that we use to style each element. These
-                classes control the overall appearance, as well as the showing
-                and hiding via CSS transitions. You can modify any of this with
-                custom CSS or overriding our default variables. It's also worth
-                noting that just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
+              <div className="accordion-body" style={{
+              backgroundColor: props.mode === "dark" ? "rgb(21, 73, 191)" : "#fff",
+              color: props.mode === "dark" ? "#fff" : "#000",
+            }}>
+                  <p>TextUtilis is designed to make text manipulation easy and efficient. Here's how it can help:</p>
+              <ul>
+                <li>Quickly transform text into different formats with just a click.</li>
+                <li>Improve productivity with its simple, user-friendly interface.</li>
+                <li>Get real-time text statistics to help you optimize your content.</li>
+                <li>Perfect for students, writers, and professionals who work with text daily.</li>
+              </ul>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <button className="darkMode my-3" style={myStyle} onClick={toggleMode}>{btnText}</button>
       </div>
     </>
   );
